@@ -6,7 +6,8 @@ pub fn main() !void {
         .mask = std.os.empty_sigset,
         .flags = 0,
     }, null);
-    while (true) {}
+    // Wait for user to press Ctrl + C
+    std.time.sleep(999_999_999_999);
 }
 
 fn handleSIGINT(_: c_int) callconv(.C) void {
