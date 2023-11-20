@@ -29,6 +29,7 @@ This guide follows zig master branch.
 - [Copy a file](https://github.com/tr1ckydev/zig-guides/blob/main/guides/filesystem/copy_a_file.zig)
 - [Check if a file exists](https://github.com/tr1ckydev/zig-guides/blob/main/guides/filesystem/check_if_a_file_exists.zig)
 - [Append data incrementally to a file](https://github.com/tr1ckydev/zig-guides/blob/main/guides/filesystem/append_data_incrementally.zig)
+- [Write to stdout](https://github.com/tr1ckydev/zig-guides/blob/main/guides/filesystem/write_to_stdout.zig)
 
 
 
