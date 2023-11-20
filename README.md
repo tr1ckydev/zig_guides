@@ -85,3 +85,4 @@ This guide follows zig master branch.
 - [Encode and decode base64 string](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/encode_decode_base64.zig)
 - [Compress and decompress data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/compress_and_decompress.zig)
 - [Parse a semver version string](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/parse_a_semver_string.zig)
+- [Generate random data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/generate_random_data.zig)
