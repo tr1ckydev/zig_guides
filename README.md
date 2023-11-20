@@ -65,6 +65,7 @@ This guide follows zig master branch.
 - [Generate SHA256 hash of a data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/hashing/generate_sha256.zig)
 - [Generate MD5 hash of a data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/hashing/generate_md5.zig)
 - [Incrementally compute hash of a data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/hashing/incrementally_hash.zig)
+- [Generate cryptographically secure random data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/hashing/generate_secure_random_data.zig)
 
 
 
