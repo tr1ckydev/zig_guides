@@ -45,6 +45,7 @@ This guide follows zig master branch.
 - [Start a simple HTTP server](https://github.com/tr1ckydev/zig-guides/blob/main/guides/http/start_a_simple_http_server.zig)
 - [Send an HTTP request using fetch](https://github.com/tr1ckydev/zig-guides/blob/main/guides/http/send_http_request_using_fetch.zig)
 - [Fetch JSON from an API url and parse it](https://github.com/tr1ckydev/zig-guides/blob/main/guides/http/fetch_json_api_and_parse.zig)
+- [Download a file from url](https://github.com/tr1ckydev/zig-guides/blob/main/guides/http/download_a_file_from_url.zig)
 
 
 
