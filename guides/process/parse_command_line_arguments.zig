@@ -12,7 +12,7 @@ pub fn main() !void {
     }
 
     // Getting args as an array
-    var args2 = try std.process.argsAlloc(allocator);
+    const args2 = try std.process.argsAlloc(allocator);
     defer std.process.argsFree(allocator, args2);
     std.debug.print("{s}", .{args2});
 }
