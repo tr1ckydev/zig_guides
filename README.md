@@ -13,6 +13,7 @@ This guide follows zig master branch.
 
 - [📂 File System](#-file-system)
 - [📄 JSON](#-json)
+- [📚 Data](#-data)
 - [🌐 HTTP](#-http)
 - [⚙️ Process](#%EF%B8%8F-process)
 - [🔒 Hashing](#-hashing)
@@ -38,6 +39,12 @@ This guide follows zig master branch.
 - [Parse a JSON string](https://github.com/tr1ckydev/zig-guides/blob/main/guides/json/parse_a_json_string.zig)
 - [Stringify data into JSON](https://github.com/tr1ckydev/zig-guides/blob/main/guides/json/stringify_data_into_json.zig)
 - [Read a JSON file](https://github.com/tr1ckydev/zig-guides/blob/main/guides/json/read_a_json_file.zig)
+
+
+
+## 📚 Data
+
+- [Sort numbers](https://github.com/tr1ckydev/zig-guides/blob/main/guides/data/sort_numbers.zig)
 
 
 
