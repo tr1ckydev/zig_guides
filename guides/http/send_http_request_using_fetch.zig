@@ -3,11 +3,13 @@ const std = @import("std");
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     const allocator = gpa.allocator();
+    var body = std.ArrayList(u8).init(allocator);
+    defer body.deinit();
     var client = std.http.Client{ .allocator = allocator };
     defer client.deinit();
-    var fetch_result = try client.fetch(allocator, .{
+    _ = try client.fetch(.{
         .location = .{ .url = "http://example.com/" },
+        .response_storage = .{ .dynamic = &body },
     });
-    defer fetch_result.deinit();
-    std.debug.print("{?s}", .{fetch_result.body});
+    std.debug.print("{s}", .{body.items});
 }

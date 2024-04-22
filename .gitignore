@@ -1,6 +1,4 @@
-file.txt
-file_copy.txt
+*.txt
 add.zig
-libadd.so
-libadd.so.o
-zig-0.11.0.tar.xz
+libadd.*
+*.tar.xz

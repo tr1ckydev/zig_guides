@@ -1,32 +1,30 @@
 const std = @import("std");
 
+const data = "Hello world" ** 100;
+
 pub fn main() !void {
-    var buffer: [100]u8 = undefined;
-    var len: usize = undefined;
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    const allocator = gpa.allocator();
+    try exec(std.compress.flate, allocator);
+    try exec(std.compress.zlib, allocator);
+    try exec(std.compress.gzip, allocator);
+}
 
-    var buffer_stream = std.io.fixedBufferStream(&buffer);
+fn exec(comptime pkg: type, allocator: std.mem.Allocator) !void {
+    std.debug.print("{}\n", .{pkg});
+    var buf = std.ArrayList(u8).init(allocator);
+    defer buf.deinit();
 
-    var compressor = try std.compress.deflate.compressor(
-        std.heap.page_allocator,
-        buffer_stream.writer(),
-        .{},
-    );
-    defer compressor.deinit();
-    _ = try compressor.write("hello " ** 5);
-    _ = try compressor.write("world " ** 5);
-    try compressor.close();
-    len = compressor.bytesWritten();
-    std.debug.print("After compression:\n  Size: {} bytes\n  Content: {s}\n", .{ len, buffer[0..len] });
+    // Compress
+    var cmp = try pkg.compressor(buf.writer(), .{});
+    _ = try cmp.write(data);
+    try cmp.finish();
+    std.debug.print("├─ Compressed: {} bytes\n", .{buf.items.len});
 
-    buffer_stream.reset();
-
-    var decompressor = try std.compress.deflate.decompressor(
-        std.heap.page_allocator,
-        buffer_stream.reader(),
-        null,
-    );
-    defer decompressor.deinit();
-    len = try decompressor.read(&buffer);
-    _ = decompressor.close();
-    std.debug.print("After decompression:\n  Size: {} bytes\n  Content: {s}\n", .{ len, buffer[0..len] });
+    // Decompress
+    var fbs = std.io.fixedBufferStream(buf.items);
+    var dcp = pkg.decompressor(fbs.reader());
+    const plain = try dcp.reader().readAllAlloc(allocator, std.math.maxInt(usize));
+    defer allocator.free(plain);
+    std.debug.print("└─ Decompressed: {} bytes\n\n", .{plain.len});
 }

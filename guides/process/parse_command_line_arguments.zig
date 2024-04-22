@@ -14,5 +14,5 @@ pub fn main() !void {
     // Getting args as an array
     const args2 = try std.process.argsAlloc(allocator);
     defer std.process.argsFree(allocator, args2);
-    std.debug.print("{s}", .{args2});
+    std.debug.print("{s}\n", .{args2});
 }

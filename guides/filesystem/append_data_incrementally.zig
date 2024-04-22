@@ -12,5 +12,5 @@ pub fn main() !void {
     try file.seekTo(0);
     var buffer: [100]u8 = undefined;
     const len = try file.readAll(&buffer);
-    std.debug.print("{s}", .{buffer[0..len]});
+    std.debug.print("{s}\n", .{buffer[0..len]});
 }
