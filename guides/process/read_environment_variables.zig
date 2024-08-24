@@ -5,6 +5,8 @@ pub fn main() !void {
     const allocator = gpa.allocator();
     var env = try std.process.getEnvMap(allocator);
     defer env.deinit();
-    const ENV_HOME = env.get("HOME");
-    std.debug.print("{?s}\n", .{ENV_HOME});
+    var iter = env.iterator();
+    while (iter.next()) |e| {
+        std.debug.print("{s}={s}\n", .{ e.key_ptr.*, e.value_ptr.* });
+    }
 }

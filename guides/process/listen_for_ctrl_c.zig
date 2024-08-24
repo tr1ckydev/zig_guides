@@ -1,7 +1,7 @@
 const std = @import("std");
 
 pub fn main() !void {
-    try std.posix.sigaction(std.posix.SIG.INT, &.{
+    std.posix.sigaction(std.posix.SIG.INT, &.{
         .handler = .{ .handler = handleSIGINT },
         .mask = std.posix.empty_sigset,
         .flags = 0,
@@ -10,7 +10,7 @@ pub fn main() !void {
     std.time.sleep(999_999_999_999);
 }
 
-fn handleSIGINT(_: i32) callconv(.C) void {
+fn handleSIGINT(_: c_int) callconv(.C) void {
     std.debug.print("\nCtrl + C was pressed.\n", .{});
     std.process.exit(0);
 }

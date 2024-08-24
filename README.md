@@ -94,3 +94,9 @@ This guide follows zig master branch.
 - [Compress and decompress data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/compress_and_decompress.zig)
 - [Parse a semver version string](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/parse_a_semver_string.zig)
 - [Generate random data](https://github.com/tr1ckydev/zig-guides/blob/main/guides/utilities/generate_random_data.zig)
+
+
+
+## License
+
+All code in this repository is licensed under [The Unlicense](https://unlicense.org/) which allows you to use any part of the code anywhere without restrictions.
